@@ -1,0 +1,95 @@
+:root {
+  --color-primary:  rgba(255, 255, 255, 0.87);
+  --color-secondary: rgb(36, 36, 36);
+  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--color-primary);
+  background-color: var(--color-secondary);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+* {
+  box-sizing: border-box;
+  position: relative;
+}
+
+body {
+  margin: 0;
+}
+
+.thepower-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+}
+
+.thepower-gallery > .card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+}
+
+.thepower-gallery > .card * {
+  pointer-events: none;
+}
+
+.thepower-gallery > .card > .image-container {
+  max-width: 200px;
+}
+
+.image-container > img {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.score-container > .star {
+  font-size: 1.5rem;
+}
+
+.thepower-modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  top: 15vh;
+  max-height: 60vh;
+  max-width: 90%
+  width: 100%;
+  z-index: 1;
+  background-color: #fff;
+  margin: 0 auto;
+  color: var(--color-secondary);
+}
+
+.thepower-modal button {
+  background-color: transparent;
+  border: 0;
+  font-size: 1.5rem;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  border-bottom: 1px solid var(--color-secondary);
+}
+
+.modal-body {
+  padding: 0.5rem 1rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .thepower-modal {
+    max-width: 80%;
+  }
+}
